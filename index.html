@@ -207,17 +207,23 @@
       .author-section .text-left { text-align: center; }
       .author-section img { max-width: 200px; margin: 0 auto 30px; order: -1; }
       
-      /* MODIFICADO: Ajuste de responsividade para títulos */
       .hero-section h1 { 
-        font-size: 1.9rem; 
+        font-size: 1.8rem; /* Reduzido para evitar quebra */
         line-height: 1.3;
-        overflow-wrap: break-word; /* Garante que palavras longas não quebrem o layout */
-        -webkit-hyphens: auto;
-        -ms-hyphens: auto;
-        hyphens: auto;
+        word-break: break-word; /* Força a quebra de palavras longas */
       }
       .section-title, .solution-section h2, .author-section h2, .author-section h3 { font-size: 1.8rem; }
-      .guarantee-section h2 { font-size: 3rem; }
+      
+      .guarantee-section h2 { 
+        font-size: 2.5rem; /* Reduzido drasticamente */
+        letter-spacing: 5px; /* Reduzido para caber */
+        white-space: nowrap; /* Impede a quebra da palavra */
+      }
+
+      .cta-button {
+        white-space: normal; /* Permite que o texto do botão quebre a linha */
+        padding: 1rem 1.5rem;
+      }
     }
   </style>
 </head>
