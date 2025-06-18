@@ -55,7 +55,7 @@
     .hero-section h1 { font-size: 2.5rem; }
     .hero-section .subtitle { font-size: 1.1rem; margin: 20px 0; }
     .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .video-container iframe, .shorts-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     .hero-image img { width: 100%; max-width: 400px; height: auto; mask-image: linear-gradient(to top, transparent 0%, black 25%); -webkit-mask-image: linear-gradient(to top, transparent 0%, black 25%); }
     .cta-button-container { margin-top: 30px; width: 100%; }
 
@@ -66,6 +66,26 @@
     .card .icon-container svg { width: 32px; height: 32px; }
     .card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: var(--text-white); }
     
+    .shorts-container {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      margin: 20px auto 0;
+      padding-top: 177.77%; 
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      background-color: #000;
+    }
+
+    .proof-image-container img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
     .solution-section {
       display: grid;
       grid-template-columns: 400px 1fr; 
@@ -192,6 +212,49 @@
     .faq-question .arrow { transition: transform 0.5s ease; }
     .faq-item.active .arrow { transform: rotate(180deg); }
 
+    .urgency-box {
+      background-color: #1a1a1a;
+      border: 1px solid var(--gold-yellow);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 40px auto;
+      max-width: 700px;
+      text-align: center;
+    }
+    .urgency-box p {
+      color: var(--gold-yellow);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    .urgency-box p.offer-ends-text {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    .urgency-box p span {
+      color: var(--text-white);
+      text-decoration: line-through;
+    }
+    
+    .bonus-scarcity {
+      animation: pulse 2.5s infinite;
+      display: inline-block;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+    
+    #countdown-timer {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--text-white);
+      margin-top: 15px;
+    }
+
     /* Adaptações para responsividade */
     @media (max-width: 768px) {
       .section { padding: 60px 20px; }
@@ -230,9 +293,44 @@
 <body>
 
   <main>
-    <section class="section hero-section"><div class="hero-content text-left"><h1>FINALMENTE! Aprenda a Fazer Seus Primeiros <span class="highlight-text">R$100 Online de Forma RÁPIDA</span> e SEM Investir NADA (Mesmo Sendo Iniciante Absoluto!)</h1><p class="subtitle">O Guia 100% Prático e Direto ao Ponto que te Pega pela Mão e Mostra o Caminho para Monetizar na Internet HOJE Mesmo!</p><div class="video-container"><iframe src="https://www.youtube.com/embed/HtYuBh0PRGk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="cta-button-container"><a href="#comprar" class="cta-button">QUERO MEUS PRIMEIROS R$100 ONLINE AGORA</a></div></div><div class="hero-image"><img src="https://static-media.hotmart.com/Hxmnea22E_nEm5F76DqyN0tWYNY=/filters:quality(100):format(webp)/klickart-prod/uploads/media/file/9429506/foto_paris_vertical.png" alt="Fábio Zanini"></div></section>
+    <section class="section hero-section"><div class="hero-content text-left"><h1>FINALMENTE! Aprenda a Fazer Seus Primeiros <span class="highlight-text">R$100 Online de Forma RÁPIDA</span> e SEM Investir NADA (Mesmo Sendo Iniciante Absoluto!)</h1><p class="subtitle">O Guia 100% Prático e Direto ao Ponto que te Pega pela Mão e Mostra o Caminho para Monetizar na Internet HOJE Mesmo!</p>
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/HtYuBh0PRGk?si=hvJHf4P5qbL3ydrA&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    
+    <div class="urgency-box">
+      <p class="offer-ends-text">⚠️ A OFERTA DE LANÇAMENTO TERMINA EM:</p>
+      <div id="countdown-timer"></div>
+    </div>
+    
+    <div class="cta-button-container"><a href="#comprar" class="cta-button">QUERO MEUS PRIMEIROS R$100 ONLINE AGORA</a></div></div><div class="hero-image"><img src="https://static-media.hotmart.com/Hxmnea22E_nEm5F76DqyN0tWYNY=/filters:quality(100):format(webp)/klickart-prod/uploads/media/file/9429506/foto_paris_vertical.png" alt="Fábio Zanini"></div></section>
+    
     <section class="section"><h2 class="section-title">Você se Identifica com Algum Desses Desafios?</h2><div class="card-grid"><div class="card text-left"><div class="icon-container"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg></div><h3>Busca Interminável?</h3><p>Cansado(a) de procurar formas de ganhar dinheiro online e só encontrar promessas vazias ou métodos complicados demais para começar?</p></div><div class="card text-left"><div class="icon-container"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div><h3>Se Sente Perdido?</h3><p>Sente-se completamente perdido(a) sem saber qual o primeiro passo, por onde começar de verdade para ter uma renda extra na internet?</p></div><div class="card text-left"><div class="icon-container"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></div><h3>Tentativas Frustradas?</h3><p>Já tentou várias estratégias, comprou outros cursos, mas ainda não conseguiu fazer seus primeiros R$100 online e se sente desmotivado(a)?</p></div><div class="card text-left"><div class="icon-container"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-5 0V7.5A2.5 2.5 0 0 1 9.5 5v1.5A2.5 2.5 0 0 1 7 9V7a2.5 2.5 0 0 1 5 0v1.5a2.5 2.5 0 0 1-2.5 2.5h-1a2.5 2.5 0 0 1-2.5-2.5V7a2.5 2.5 0 0 1 5 0v1.5A2.5 2.5 0 0 1 7 11v1.5a2.5 2.5 0 0 1 2.5 2.5A2.5 2.5 0 0 1 12 18v-1.5a2.5 2.5 0 0 1 2.5-2.5h1a2.5 2.5 0 0 1 2.5 2.5V17a2.5 2.5 0 0 1-5 0v-1.5a2.5 2.5 0 0 1 2.5-2.5V11A2.5 2.5 0 0 1 17 9v1.5a2.5 2.5 0 0 1-2.5 2.5A2.5 2.5 0 0 1 12 11V7a2.5 2.5 0 0 1 2.5-2.5A2.5 2.5 0 0 1 17 7v1.5a2.5 2.5 0 0 1-2.5 2.5h-1a2.5 2.5 0 0 1-2.5-2.5V4.5A2.5 2.5 0 0 1 12 2z"></path></svg></div><h3>Preciso Ser Expert ou Rico?</h3><p>Acredita que para ganhar dinheiro na internet precisa ser um gênio da tecnologia, um expert em marketing ou investir uma fortuna que você não tem?</p></div><div class="card text-left"><div class="icon-container"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div><h3>Só Enrola ou Complica?</h3><p>Cansado(a) de cursos longos, cheios de teoria que mais confundem do que ajudam, e só quer um método SIMPLES, PRÁTICO e que mostre resultados RÁPIDO?</p></div><div class="card text-left"><div class="icon-container"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div><h3>Medo de Não Funcionar (De Novo)?</h3><p>Tem receio de investir seu tempo e energia em mais uma coisa que não vai te trazer o resultado que você espera e precisa para começar?</p></div></div></section>
     
+    <section class="section">
+      <h2 class="section-title">A Prova de que o Método Funciona na Prática</h2>
+      <div class="card-grid">
+        <div class="card text-center">
+            <h3>Método Lucro Por Indicação (L.P.I)</h3>
+            <div class="shorts-container">
+                <iframe src="https://www.youtube.com/embed/Otwk_VD2nY4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="card text-center">
+             <h3>Método Afiliado Express (Amazon)</h3>
+            <div class="proof-image-container">
+                 <img src="prova-amazon.webp" alt="Prova de pagamento da Amazon Afiliados">
+            </div>
+        </div>
+        <div class="card text-center">
+            <h3>Renda Passiva com Vídeos</h3>
+            <div class="shorts-container">
+                 <iframe src="https://www.youtube.com/embed/2luUEqLmsGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section solution-section">
       <div>
         <img src="https://static-media.hotmart.com/aRVK4NunmIOwJLV4rfZwTk22eVE=/filters:quality(100):format(webp)/klickart-prod/uploads/media/file/9402881/mockup.png" alt="Monetiza Rápido no Celular">
@@ -241,17 +339,16 @@
         <h2>Chegou a Hora de Mudar Isso com o <strong class="highlight-text">Monetiza Rápido!</strong></h2>
         <p>Se você se identificou com os desafios que acabou de ler, respire aliviado: você não está sozinho(a) e, o mais importante, <strong>a solução que você busca está aqui!</strong></p>
         <p>O <strong>Monetiza Rápido</strong> foi desenhado do zero, pensando EXATAMENTE em quem está cansado(a) de promessas vazias e quer um caminho REAL e PRÁTICO para seus primeiros resultados financeiros na internet.</p>
-        <p>Esqueça os cursos gigantescos, cheios de teoria que mais confundem do que ajudam, ou aqueles que exigem grandes investimentos antes mesmo de você ver o primeiro real.</p>
-        <p>Com o <strong>Monetiza Rápido</strong>, você terá acesso a um método <strong>100% focado na ação</strong>, um passo a passo testado e validado para você conquistar seus <strong>primeiros R$100 online</strong>. E o melhor: utilizando apenas <strong>ferramentas gratuitas</strong> e o seu esforço, mesmo que você nunca tenha ganhado um único centavo na internet antes ou acredite que precisa ser um expert para começar.</p>
-        <p>Chega de se sentir perdido(a) ou de adiar seus sonhos! Com as estratégias SIMPLES e EFICAZES do Monetiza Rápido, você terá a direção clara para começar a ver resultados RÁPIDO.</p>
+        <p><strong>Imagine a sensação</strong> de pagar aquela conta que está te tirando o sono com o dinheiro que você fez na internet. Ou de poder finalmente comprar aquele fone de ouvido que você tanto queria, sem tirar do seu orçamento. É isso que seus primeiros R$100 online significam: <strong>o começo da sua liberdade.</strong></p>
+        <p>Com as estratégias SIMPLES e EFICAZES do Monetiza Rápido, você terá a direção clara para começar a ver resultados RÁPIDO.</p>
       </div>
     </section>
 
     <section class="section"><h2 class="section-title">O <strong>Monetiza Rápido</strong> é PERFEITO Para Você Se...</h2><p style="max-width: 600px; margin: 0 auto 40px;">Você está no lugar certo e este curso foi feito sob medida para te ajudar se você:</p><ul class="audience-list"><li class="audience-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span><div class="text-left"><strong>NUNCA GANHOU DINHEIRO NA INTERNET</strong> e se sente completamente perdido(a), sem saber por onde dar o primeiro passo real.</div></li><li class="audience-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span><div class="text-left"><strong>JÁ TENTOU DE TUDO</strong> para monetizar online, investiu em outros métodos, mas até hoje não viu resultados concretos e se sente frustrado(a).</div></li><li class="audience-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span><div class="text-left">É <strong>CRIADOR(A) DE CONTEÚDO</strong> e já tem uma audiência (mesmo que pequena), mas não faz ideia de como transformar essa atenção em dinheiro no bolso.</div></li><li class="audience-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span><div class="text-left"><strong>BUSCA UMA RENDA EXTRA PRÁTICA</strong> e quer aprender métodos simples e diretos que podem ser aplicados HOJE, sem teorias complicadas.</div></li><li class="audience-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span><div class="text-left">QUER UM <strong>CURSO SEM ENROLAÇÃO</strong>, 100% focado em AÇÃO e em te levar aos seus primeiros R$100 online da forma mais rápida e eficiente possível.</div></li><li class="audience-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span><div class="text-left"><strong>NÃO QUER (OU NÃO PODE) INVESTIR DINHEIRO</strong> para começar e prefere métodos que utilizem apenas ferramentas gratuitas.</div></li><li class="audience-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span><div class="text-left">PREFERE ESTRATÉGIAS ONDE <strong>NÃO PRECISA APARECER</strong> em vídeos ou fotos para ter resultados.</div></li></ul></section>
     
-    <section class="section"><h2 class="section-title">Veja o Caminho PRÁTICO e Passo a Passo Para Seus Primeiros R$100 Online:</h2><div class="modules-list text-left"><div class="card text-left"><h3>Módulo 1: Sua Jornada Rápida para os R$100</h3><p>Você vai: Ajustar seu mindset para o sucesso, entender a proposta REAL do curso e receber seu plano de ação IMEDIATO para não perder tempo e já começar no caminho certo!</p><div class="module-pills"><span class="pill-title">Aulas Chave:</span><span class="pill">Boas-vindas & O Mindset</span><span class="pill">Plano de Ação Imediato + PDF</span></div></div><div class="card text-left"><h3>Módulo 2: Ferramentas Essenciais - Preparando Seu Arsenal Gratuito</h3><p>Você vai: Criar suas contas nas principais plataformas de afiliados (Amazon, Mercado Livre, Shopee) de forma rápida e descomplicada, deixando tudo PRONTO para começar a monetizar.</p><div class="module-pills"><span class="pill-title">Aulas Chave:</span><span class="pill">Cadastro: Amazon</span><span class="pill">Cadastro: Mercado Livre</span><span class="pill">Cadastro: Shopee</span></div></div><div class="card text-left"><h3>Módulo 3: Método #1 - Afiliado Express (Ganhos Sem Aparecer)</h3><p>Você vai: Descobrir os 2 métodos INFALÍVEIS para encontrar produtos "ímã de vendas" e aprender as estratégias MAIS RÁPIDAS para divulgar seus links no WhatsApp Status e Reels/Shorts (sem precisar aparecer!) e buscar suas primeiras vendas em até 24h!</p><div class="module-pills"><span class="pill-title">Aulas Chave:</span><span class="pill">Produtos "Ímã de Vendas"</span><span class="pill">Venda Rápida em WhatsApp/Reels</span></div></div><div class="card text-left"><h3>Módulo 4: Método #2 - Lucro Fácil Indicando Apps e Sites</h3><p>Você vai: Aprender a ganhar dinheiro de forma simples indicando aplicativos e sites úteis que pagam por isso, SEM PRECISAR VENDER NADA! Uma forma rápida de complementar sua renda.</p><div class="module-pills"><span class="pill-title">Aulas Chave:</span><span class="pill">Ganhando com "Indique e Ganhe"</span></div></div><div class="card text-left"><h3>Módulo 5: Recebendo Sua Grana & Próximos Passos</h3><p>Você vai: Aprender o processo de saque nas plataformas, dicas para evitar bloqueios e receber seu dinheiro com segurança. E o mais importante: celebrar sua conquista e entender como não parar nos R$100 e continuar crescendo!</p><div class="module-pills"><span class="pill-title">Aulas Chave:</span><span class="pill">Saque Rápido e Seguro</span><span class="pill">Parabéns pelos R$100! E Agora?</span></div></div></div><p style="margin-top: 30px; text-align: center;">Com o <strong>Monetiza Rápido</strong>, você não recebe apenas aulas, mas um plano de ação completo e prático para sair do zero e alcançar seus primeiros resultados financeiros na internet!</p></section>
+    <section class="section"><h2 class="section-title">Veja o Caminho PRÁTICO e Passo a Passo Para Seus Primeiros R$100 Online:</h2><div class="modules-list text-left"><div class="card text-left"><h3>Módulo 1: Sua Jornada Rápida para os R$100</h3><p>Você vai: Ajustar seu mindset para o sucesso, entender a proposta REAL do curso e receber seu plano de ação IMEDIATO para não perder tempo e já começar no caminho certo!</p><div class="module-pills"><span class="pill-title">Aulas Chave:</span><span class="pill">Boas-vindas & O Mindset</span><span class="pill">Plano de Ação Imediato + PDF</span></div></div><div class="card text-left"><h3>Módulo 2: Arsenal Gratuito - Sua Base de Lucros</h3><p>Você vai: Criar suas contas nas principais plataformas de afiliados (Amazon, Mercado Livre, Shopee) de forma rápida e descomplicada, deixando tudo PRONTO para começar a monetizar.</p><div class="module-pills"><span class="pill-title">Aulas Chave:</span><span class="pill">Cadastro: Amazon</span><span class="pill">Cadastro: Mercado Livre</span><span class="pill">Cadastro: Shopee</span></div></div><div class="card text-left"><h3>Módulo 3: Método Afiliado Express (Ganhos Sem Aparecer)</h3><p>Você vai: Descobrir os 2 métodos INFALÍVEIS para encontrar produtos "ímã de vendas" e aprender as estratégias MAIS RÁPIDAS para divulgar seus links no WhatsApp Status e Reels/Shorts (sem precisar aparecer!) e buscar suas primeiras vendas em até 24h!</p><div class="module-pills"><span class="pill-title">Aulas Chave:</span><span class="pill">Produtos "Ímã de Vendas"</span><span class="pill">Venda Rápida em WhatsApp/Reels</span></div></div><div class="card text-left"><h3>Módulo 4: Método Lucro Por Indicação (L.P.I)</h3><p>Você vai: Aprender a ganhar dinheiro de forma simples indicando aplicativos e sites úteis que pagam por isso, SEM PRECISAR VENDER NADA! Uma forma rápida de complementar sua renda.</p><div class="module-pills"><span class="pill-title">Aulas Chave:</span><span class="pill">Ganhando com "Indique e Ganhe"</span></div></div><div class="card text-left"><h3>Módulo 5: Saque Seus Lucros & Próximos Passos</h3><p>Você vai: Aprender o processo de saque nas plataformas, dicas para evitar bloqueios e receber seu dinheiro com segurança. E o mais importante: celebrar sua conquista e entender como não parar nos R$100 e continuar crescendo!</p><div class="module-pills"><span class="pill-title">Aulas Chave:</span><span class="pill">Saque Rápido e Seguro</span><span class="pill">Parabéns pelos R$100! E Agora?</span></div></div></div><p style="margin-top: 30px; text-align: center;">Com o <strong>Monetiza Rápido</strong>, você não recebe apenas aulas, mas um plano de ação completo e prático para sair do zero e alcançar seus primeiros resultados financeiros na internet!</p></section>
     
-    <section class="section"><h2 class="section-title">E Não Para Por Aí! Ao Entrar Para o <strong>Monetiza Rápido</strong> HOJE, Você Leva Estes <span class="highlight-text">BÔNUS INCRÍVEIS (GRÁTIS!):</span></h2><p style="max-width: 700px; margin: -20px auto 40px;">Além de todo o passo a passo prático para seus primeiros R$100, eu preparei alguns presentes especiais para acelerar ainda mais a sua jornada e garantir que você tenha todas as ferramentas para o sucesso:</p><div class="modules-list text-left"><div class="card text-left bonus-card"><h3 style="color: var(--neon-purple);">+ BÔNUS #1: Módulo Completo - Turbinando Seus Resultados com Inteligência Artificial!</h3><p>Desbloqueie o SUPERPODER da IA GRATUITA! Você vai aprender a criar suas contas no ChatGPT e Google ImageFX e verá na PRÁTICA como usar a Inteligência Artificial para gerar ideias de posts, textos persuasivos que vendem e imagens incríveis para suas divulgações, economizando HORAS de trabalho e elevando a qualidade do seu conteúdo!</p><p>Aulas Incluídas: Cadastro Rápido: ChatGPT e Google ImageFX; IA na Prática: Criando Posts e Ideias que Vendem em Minutos (COM DEMONSTRAÇÕES!) + PDF com Prompts Prontos!</p><div class="price-anchor">Valor Percebido: <span>(Normalmente Vendido por R$97)</span> - HOJE GRÁTIS PARA VOCÊ!</div></div><div class="card text-left bonus-card"><h3 style="color: var(--neon-purple);">+ BÔNUS #2: PDF Exclusivo - Seu Mapa Rápido para os Primeiros R$100 Online!</h3><p>Não se perca no caminho! Receba um checklist completo e um mapa visual com todas as etapas e tarefas do curso para você baixar, imprimir e acompanhar seu progresso rumo aos seus primeiros R$100. Seu guia prático para AÇÃO IMEDIATA!</p><div class="price-anchor">Valor Percebido: <span>(Valor R$27)</span> - HOJE GRÁTIS PARA VOCÊ!</div></div></div><p class="text-center" style="margin-top: 40px;"><strong>Só esses bônus já valeriam muito mais do que o pequeno investimento no Monetiza Rápido! Mas você leva TUDO isso ao garantir sua vaga hoje.</strong></p></section>
+    <section class="section"><h2 class="section-title">E Não Para Por Aí! Ao Entrar Para o <strong>Monetiza Rápido</strong> HOJE, Você Leva Estes <span class="highlight-text">BÔNUS INCRÍVEIS (GRÁTIS!):</span></h2><p style="max-width: 700px; margin: -20px auto 40px;">Além de todo o passo a passo prático para seus primeiros R$100, eu preparei alguns presentes especiais para acelerar ainda mais a sua jornada e garantir que você tenha todas as ferramentas para o sucesso: <br><strong class="bonus-scarcity">✨ Bônus disponíveis apenas para os 100 primeiros inscritos desta nova turma!</strong></p><div class="modules-list text-left"><div class="card text-left bonus-card"><h3 style="color: var(--neon-purple);">+ BÔNUS #1: Módulo Completo - Turbinando Seus Resultados com Inteligência Artificial!</h3><p>Desbloqueie o SUPERPODER da IA GRATUITA! Você vai aprender a criar suas contas no ChatGPT e Google ImageFX e verá na PRÁTICA como usar a Inteligência Artificial para gerar ideias de posts, textos persuasivos que vendem e imagens incríveis para suas divulgações, economizando HORAS de trabalho e elevando a qualidade do seu conteúdo!</p><p>Aulas Incluídas: Cadastro Rápido: ChatGPT e Google ImageFX; IA na Prática: Criando Posts e Ideias que Vendem em Minutos (COM DEMONSTRAÇÕES!) + PDF com Prompts Prontos!</p><div class="price-anchor">Valor Percebido: <span>(Normalmente Vendido por R$97)</span> - HOJE GRÁTIS PARA VOCÊ!</div></div><div class="card text-left bonus-card"><h3 style="color: var(--neon-purple);">+ BÔNUS #2: PDF Exclusivo - Seu Mapa Rápido para os Primeiros R$100 Online!</h3><p>Não se perca no caminho! Receba um checklist completo e um mapa visual com todas as etapas e tarefas do curso para você baixar, imprimir e acompanhar seu progresso rumo aos seus primeiros R$100. Seu guia prático para AÇÃO IMEDIATA!</p><div class="price-anchor">Valor Percebido: <span>(Valor R$27)</span> - HOJE GRÁTIS PARA VOCÊ!</div></div></div><p class="text-center" style="margin-top: 40px;"><strong>Só esses bônus já valeriam muito mais do que o pequeno investimento no Monetiza Rápido! Mas você leva TUDO isso ao garantir sua vaga hoje.</strong></p></section>
     
     <section class="section">
       <h2 class="section-title text-center"><strong>Quanto Vale Ter o Caminho Desenhado Para Seus Primeiros R$100 Online (e Muito Mais)?</strong></h2>
@@ -268,7 +365,7 @@
       </div>
 
       <div class="offer-box">
-        <p>Acesso Imediato ao Monetiza Rápido + Todos os Bônus por APENAS:</p>
+        <p>De <span>R$97</span> por APENAS:</p>
         <div class="price"><strong>R$37</strong><span>,00</span></div>
         <div class="installments">(Ou 5 parcelas de R$8,19)</div>
         <p style="font-size: 1rem; line-height: 1.6; max-width: 600px; margin: 20px auto;">Sim, você leu certo! Menos do que o preço de um lanche para ter acesso a um método que pode colocar seus primeiros R$100 (e muito mais) no seu bolso!</p>
@@ -314,7 +411,6 @@
       <div class="gradient-divider"></div>
     </section>
 
-    <!-- SEÇÃO MODIFICADA: Adicionado um container para alinhar o texto -->
     <section class="section" id="ultima-chamada">
       <h2 class="section-title">Não Deixe Seus Primeiros R$100 Online Para Depois! <br>A Hora de Agir é <span class="highlight-text">AGORA!</span></h2>
       <div class="text-left" style="max-width: 700px; margin: 20px auto;">
@@ -332,9 +428,10 @@
       <div class="device-icons"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="20" x2="22" y2="20"></line></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg></div>
       <p style="margin-top: 15px;">Aproveite o conteúdo em qualquer dispositivo.</p>
       <div class="final-offer-box" id="comprar">
-        <p>POR APENAS</p>
+        <p>De <span>R$97</span> por APENAS:</p>
         <div class="price"><strong>R$37</strong><span>,00</span></div>
         <div class="installments">(Ou 5 x R$8,19)</div>
+        <p style="font-size: 0.9rem; margin: 20px auto 10px;">Menos de R$0,28 por dia para ter acesso a um método que pode mudar sua renda.</p>
         <a href="https://hotm.art/ComprarMonetizaRapido" class="cta-button">INVESTIR AGORA</a>
         <p style="font-size: 0.8rem; margin-top: 15px; margin-bottom: 0;">PAGAMENTO 100% SEGURO COM ACESSO IMEDIATO</p>
       </div>
@@ -354,6 +451,43 @@
         item.classList.toggle('active');
       });
     });
+
+    // --- SCRIPT DO CONTADOR REGRESSIVO ---
+    function startCountdown() {
+      const countdownElement = document.getElementById('countdown-timer');
+      let endTime = localStorage.getItem('countdownEndTime');
+
+      if (!endTime || new Date().getTime() > endTime) {
+        // Define 2 horas a partir do momento atual
+        endTime = new Date().getTime() + (2 * 60 * 60 * 1000);
+        localStorage.setItem('countdownEndTime', endTime);
+      }
+
+      const timer = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = endTime - now;
+
+        if (distance < 0) {
+          clearInterval(timer);
+          countdownElement.innerHTML = "OFERTA ENCERRADA";
+          return;
+        }
+
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = 
+          (hours < 10 ? '0' : '') + hours + ":" + 
+          (minutes < 10 ? '0' : '') + minutes + ":" + 
+          (seconds < 10 ? '0' : '') + seconds;
+
+      }, 1000);
+    }
+
+    // Inicia o contador quando a página carrega
+    window.onload = startCountdown;
+
   </script>
 </body>
 </html>
