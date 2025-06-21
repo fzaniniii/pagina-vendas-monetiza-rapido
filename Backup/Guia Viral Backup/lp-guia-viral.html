@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Guia Gratuito - Prompts de IA para Vídeos Virais</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23121212' /><polygon points='30,50 60,20 55,50 70,50 40,80 45,50' fill='%2317E6E6' /></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-color: #000000;
+      --card-bg: #121212;
+      --neon-purple: #A445F7;
+      --electric-blue: #17E6E6;
+      --text-primary: #FFFFFF;
+      --text-secondary: #CCCCCC;
+      --border-color: rgba(23, 230, 230, 0.2);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      background-color: var(--bg-color);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      background-image: radial-gradient(at 15% 20%, hsla(277, 92%, 62%, 0.15) 0px, transparent 50%),
+                        radial-gradient(at 80% 25%, hsla(180, 80%, 50%, 0.1) 0px, transparent 50%);
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .main-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5rem;
+      max-width: 1100px;
+      width: 100%;
+    }
+    .content-column {
+      flex: 1;
+      max-width: 500px;
+      text-align: left;
+    }
+    .image-column {
+      flex: 1;
+      max-width: 500px;
+      text-align: center;
+    }
+    .mockup-image {
+      width: 100%;
+      max-width: 450px;
+      animation: float 6s ease-in-out infinite;
+      filter: drop-shadow(0 0 25px rgba(23, 230, 230, 0.15));
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0px); }
+    }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      color: var(--text-primary);
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .highlight-text { color: var(--electric-blue); }
+    .subtitle {
+      font-size: 1.1rem;
+      max-width: 450px;
+      margin-bottom: 2rem;
+    }
+    .benefits-list {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0;
+    }
+    .benefits-list li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text-primary);
+    }
+    .benefits-list li svg {
+        fill: var(--electric-blue);
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+    }
+
+    /* Formulário */
+    .form-input {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #3a3a3a;
+      background-color: #1a1a1a;
+      color: var(--text-primary);
+      font-family: 'Lato', sans-serif;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--electric-blue);
+      box-shadow: 0 0 15px rgba(23, 230, 230, 0.2);
+    }
+    .cta-button {
+      display: inline-block;
+      width: 100%;
+      background: var(--electric-blue);
+      color: var(--bg-color);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 1rem 2.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(23, 230, 230, 0.3);
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+    .cta-button:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 6px 25px rgba(23, 230, 230, 0.5);
+    }
+    .cta-button:disabled {
+        background: #888;
+        cursor: not-allowed;
+    }
+    .privacy-text {
+        font-size: 0.8rem;
+        margin-top: 20px;
+        color: #888;
+    }
+    .privacy-text a {
+        color: #aaa;
+    }
+    
+    @media (max-width: 900px) {
+      .main-container {
+        flex-direction: column-reverse;
+        gap: 3rem;
+      }
+      .content-column {
+        text-align: center;
+      }
+      .subtitle {
+          margin-left: auto;
+          margin-right: auto;
+      }
+      .benefits-list {
+          text-align: left;
+          display: inline-block;
+      }
+      h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-container">
+    <div class="image-column">
+      <img src="https://i.ibb.co/7xKq6ZN2/Mockup-Iphone-Guia-Viral-2.png" alt="Mockup do Guia de Prompts Virais" class="mockup-image">
+    </div>
+
+    <div class="content-column">
+      <h1>Destrave Roteiros <span class="highlight-text">VIRAIS</span> com IA (GRÁTIS)</h1>
+      <p class="subtitle">Copie meus 10 prompts secretos para ChatGPT e ImageFX e transforme suas ideias em Reels e TikToks magnéticos em minutos.</p>
+      
+      <ul class="benefits-list">
+        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5.71,8.71L11.41,17a1,1,0,0,1-1.42,0L6.29,13.29a1,1,0,0,1,1.42-1.42L11,14.17l5.29-5.3a1,1,0,0,1,1.42,1.42Z"/></svg><span>Ter ideias de conteúdo INFINITAS.</span></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5.71,8.71L11.41,17a1,1,0,0,1-1.42,0L6.29,13.29a1,1,0,0,1,1.42-1.42L11,14.17l5.29-5.3a1,1,0,0,1,1.42,1.42Z"/></svg><span>Escrever roteiros que prendem a atenção.</span></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5.71,8.71L11.41,17a1,1,0,0,1-1.42,0L6.29,13.29a1,1,0,0,1,1.42-1.42L11,14.17l5.29-5.3a1,1,0,0,1,1.42,1.42Z"/></svg><span>Economizar HORAS de trabalho.</span></li>
+      </ul>
+
+      <form id="custom-mailerlite-form">
+          <input aria-label="name" type="text" class="form-input" name="fields[name]" placeholder="Seu primeiro nome" required>
+          <input aria-label="email" type="email" class="form-input" name="fields[email]" placeholder="Seu melhor e-mail" required>
+          <button type="submit" class="cta-button">Baixar meu guia grátis agora! 🚀</button>
+      </form>
+
+      <p class="privacy-text">Junte-se a centenas de criadores que já estão otimizando seu tempo. 100% Gratuito. Sem Spam.</p>
+    </div>
+  </div>
+  
+  <script>
+    const customForm = document.getElementById('custom-mailerlite-form');
+
+    customForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const submitButton = customForm.querySelector('.cta-button');
+        const nameInput = customForm.querySelector('input[name="fields[name]"]');
+        const emailInput = customForm.querySelector('input[name="fields[email]"]');
+
+        submitButton.disabled = true;
+        submitButton.textContent = 'ENVIANDO...';
+
+        const formData = new FormData();
+        formData.append('fields[name]', nameInput.value);
+        formData.append('fields[email]', emailInput.value);
+        formData.append('ml-submit', '1');
+        formData.append('anticsrf', 'true');
+
+        fetch('https://assets.mailerlite.com/jsonp/1546118/forms/155760388190767032/subscribe', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => {
+            if (response.ok) {
+                // Redireciona para a página de obrigado
+                window.location.href = 'https://fabiozanini.com/obrigado-guia-viral/';
+            } else {
+                // Re-habilita o botão em caso de erro
+                submitButton.disabled = false;
+                submitButton.textContent = 'TENTAR NOVAMENTE';
+                alert('Ocorreu um erro. Por favor, tente novamente.');
+            }
+        })
+        .catch(error => {
+            submitButton.disabled = false;
+            submitButton.textContent = 'TENTAR NOVAMENTE';
+            alert('Ocorreu um erro de conexão. Por favor, tente novamente.');
+        });
+    });
+  </script>
+</body>
+</html>
